@@ -1,0 +1,14 @@
+version: '3.5'
+
+services:
+  django:
+    build:
+      context: .
+    ports:
+      - "8000:8000"
+    environment:
+      - ECHO_URL=http://echoserver:8080
+  echoserver:
+    image: jmalloc/echo-server
+    ports:
+      - "8080:8080"
